@@ -1,0 +1,43 @@
+server:
+  port: 8000
+
+spring:
+  freemarker:
+    check-template-location: false
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+  data:
+    redis:
+      repositories:
+        enabled: false
+
+  #配置 Jpa
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: true
+
+  redis:
+    host: 192.168.16.8
+    port: 6379
+    database: 2
+  session:
+    store-type: redis
+
+
+
+#七牛云
+qiniu:
+  # 文件大小 /M
+  max-size: 15
+
+#邮箱验证码有效时间/分钟
+code:
+  expiration: 5
+
+#登录图形验证码有效时间/分钟
+loginCode:
+  expiration: 2
